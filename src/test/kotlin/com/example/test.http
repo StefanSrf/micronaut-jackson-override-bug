@@ -1,0 +1,18 @@
+POST http://localhost:8080/testEndpoint
+Content-Type: application/json
+
+{
+   "listWithNullContent": [null]
+}
+
+###
+GET http://localhost:8080/loggers
+
+### POST von loggers does not work when JacksonObjectMapperFactory is not subclassed
+POST http://localhost:8080/loggers/ROOT
+Content-Type: application/json
+
+{
+  "configuredLevel": "ERROR",
+  "effectiveLevel": "ERROR"
+}
